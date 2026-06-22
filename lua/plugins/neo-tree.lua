@@ -6,19 +6,22 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
-  opts = {
-    close_if_last_window = true,
-    filesystem = {
-      follow_current_file = { enabled = true },
-      window = {
-        mappings = {
-          ["a"] = "add",
-          ["d"] = "delete",
-          ["r"] = "rename",
-          ["m"] = "move",
-          ["c"] = "copy",
+  config = function()
+    require("neo-tree").setup({
+      close_if_last_window = true,
+      filesystem = {
+        follow_current_file = { enabled = true },
+        window = {
+          mappings = {
+            ["a"] = "add",
+            ["d"] = "delete",
+            ["r"] = "rename",
+            ["m"] = "move",
+            ["c"] = "copy",
+          },
         },
       },
-    },
-  },
+    })
+    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle file explorer" })
+  end,
 }

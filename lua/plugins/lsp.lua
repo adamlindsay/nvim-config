@@ -19,7 +19,6 @@ return {
 
       require("mason-lspconfig").setup({
         ensure_installed = { "ruby_lsp", "ts_ls", "bashls" },
-        automatic_installation = true,
       })
     end,
   },
