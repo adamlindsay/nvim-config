@@ -3,7 +3,6 @@ return {
   event = { "BufWritePre" },
   opts = {
     formatters_by_ft = {
-      ruby = { "rubocop" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       javascript = { "prettier" },
